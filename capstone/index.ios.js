@@ -8,8 +8,6 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
-  TabBarIOS,
-  NavigatorIOS,
   Text,
   View
 } from 'react-native';
