@@ -2,17 +2,24 @@ import React, { Component } from 'react';
 import {
   View,
   Text,
-  StyleSheet
+  StyleSheet,
+  TouchableHighlight
 } from 'react-native';
 
 class Days extends Component {
+
+  onPress() {}
+
   render() {
     return (
       <View>
-        <Text style = {[this.props.days === "Saturday" || this.props.days === "Sunday"  ? styles.weekendColor : styles.weekDayColor, styles.dayStyles]}>
-
-          {this.props.days}
-        </Text>
+        <TouchableHighlight
+          underlayColor={"grey"}
+          onPress = {this.onPress.bind(this)}>
+          <Text style = {[this.props.days === "Saturday" || this.props.days === "Sunday"  ? styles.weekendColor : styles.weekDayColor, styles.dayStyles]}>
+            {this.props.days}
+          </Text>
+        </TouchableHighlight>
       </View>
     )
   }
@@ -28,6 +35,9 @@ const styles = StyleSheet.create({
   dayStyles: {
     fontSize: 18,
     lineHeight: 24
+  },
+  touched: {
+    color: 'blue'
   }
 });
 
