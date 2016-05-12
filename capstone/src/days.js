@@ -9,7 +9,8 @@ class Days extends Component {
   render() {
     return (
       <View>
-        <Text style = {styles.fontStyle}>
+        <Text style = {[this.props.days === "Saturday" || this.props.days === "Sunday"  ? styles.weekendColor : styles.weekDayColor, styles.dayStyles]}>
+
           {this.props.days}
         </Text>
       </View>
@@ -18,9 +19,15 @@ class Days extends Component {
 }
 
 const styles = StyleSheet.create({
-  fontStyle: {
+  weekDayColor: {
+    color: 'orange'
+  },
+  weekendColor: {
+    color: 'green',
+  },
+  dayStyles: {
     fontSize: 18,
-    marginBottom: 12
+    lineHeight: 24
   }
 });
 
